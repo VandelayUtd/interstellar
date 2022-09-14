@@ -9,7 +9,7 @@
     "install": "npm run install-server && npm run install-client",
     "test": "npm run test --prefix server && npm run rest --prefix client",
     "server": "npm run watch --prefix server",
-    "client": "npms start --prefix client",
+    "client": "npm start --prefix client",
     "watch": "npm run server & npm run client",
     "deploy": "npm run build --prefix client && npm start --prefix server"
   },
@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/VandelayUtd/interstellar/issues"
   },
-  "homepage": "https://github.com/VandelayUtd/interstellar#readme"
+  "homepage": "https://github.com/VandelayUtd/interstellar#readme",
+  "dependencies": {
+    "kill-port": "^2.0.1",
+    "morgan": "^1.10.0"
+  }
 }

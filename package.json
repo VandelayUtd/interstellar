@@ -10,7 +10,8 @@
     "test": "npm run test --prefix server && npm run rest --prefix client",
     "server": "npm run watch --prefix server",
     "client": "npms start --prefix client",
-    "watch": "npm run server & npm run client"
+    "watch": "npm run server & npm run client",
+    "deploy": "npm run build --prefix client && npm start --prefix server"
   },
   "repository": {
     "type": "git",

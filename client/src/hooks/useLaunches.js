@@ -66,6 +66,6 @@ function useLaunches(onSuccessSound, onAbortSound, onFailureSound) {
     submitLaunch,
     abortLaunch,
   };
-}
+};
 
 export default useLaunches;

@@ -8,7 +8,7 @@ function isHabitablePlanet(planet) {
   return planet['koi_disposition'] === 'CONFIRMED'
     && planet['koi_insol'] > 0.36 && planet['koi_insol'] < 1.11
     && planet['koi_prad'] < 1.6;
-}
+};
 
 function loadPlanetsData() {
     return new Promise((resolve, reject) => {
@@ -30,8 +30,8 @@ function loadPlanetsData() {
           console.log(`${habitablePlanets.length} habitable planets found!`);
           resolve();
         });  
-    })
-}
+    });
+};
 
 function getAllPlanets() {
   return habitablePlanets;
@@ -42,4 +42,4 @@ function getAllPlanets() {
   module.exports = {
     loadPlanetsData,
     getAllPlanets,
-  }
+  };

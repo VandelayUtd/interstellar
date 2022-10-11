@@ -27,6 +27,7 @@
   "homepage": "https://github.com/VandelayUtd/interstellar#readme",
   "dependencies": {
     "kill-port": "^2.0.1",
+    "mongoose": "^6.6.5",
     "morgan": "^1.10.0"
   }
 }

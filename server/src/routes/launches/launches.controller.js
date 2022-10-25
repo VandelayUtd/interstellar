@@ -3,7 +3,7 @@ const {
     addNewLaunch,
     existsLaunchWithId,
     abortLaunchById,
- } = require('../../models/launches.model')
+ } = require('../../models/launches.model');
 
 async function httpGetAllLaunches(req, res) {
     return res.status(200).json(await getAllLaunches());
@@ -40,7 +40,7 @@ function httpAbortLaunch(req, res) {
 
     const aborted = abortLaunchById(launchId);
     return res.status(200).json(aborted);
-}
+};
 
 module.exports = {
     httpGetAllLaunches,

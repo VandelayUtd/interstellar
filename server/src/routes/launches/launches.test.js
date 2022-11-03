@@ -1,11 +1,18 @@
 const request = require('supertest');
 const app = require('../../app');
-const { mongoConnect } = require('../../services/mongo');
+const { 
+    mongoConnect, 
+    mongoDisconnect, 
+} = require('../../services/mongo');
 
 describe('Launches API', () => {
 
     beforeAll(async () => {
         await mongoConnect();
+    });
+
+    afterAll(async () => {
+        await mongoDisconnect();
     })
 
     describe('Test GET /launches', () => {
@@ -21,20 +28,20 @@ describe('Launches API', () => {
         const completeLaunchData = {
             mission: 'Destroy the moon',
             rocket: 'Godzuki', 
-            target: 'Kepler-186 f',
+            target: 'Kepler-62 f',
             launchDate: 'November 8, 2091',
         };
 
         const launchDataWithoutDate = { 
             mission: 'Destroy the moon',
             rocket: 'Godzuki', 
-            target: 'Kepler-186 f',
+            target: 'Kepler-62 f',
         }
 
         const launchDataWithInvalidDate = { 
             mission: 'Destroy the moon',
             rocket: 'Godzuki', 
-            target: 'Kepler-186 f',
+            target: 'Kepler-62 f',
             launchDate: 'zoot',
         }
 

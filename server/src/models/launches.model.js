@@ -68,7 +68,7 @@ async function populateLaunches() {
             success: launchDoc['success'],
             customers,
         };
-        console.log(`${launch.flightNumber} ${launch.mission}`)
+        // console.log(`${launch.flightNumber} ${launch.mission}`)
         await saveLaunch(launch);
         //TODO: populate launches collection
     }
@@ -112,9 +112,11 @@ async function getLatestFlightNumber() {
     return latestLaunch.flightNumber;
 };
 
-async function getAllLaunches() {
+async function getAllLaunches(skip, limit) {
     return await launchesDatabase
     .find({}, { '_id': 0, '__v': 0})
+    .skip(skip)
+    .limit(limit);
 };
 
 async function saveLaunch(launch) {

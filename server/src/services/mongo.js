@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
-const MONGO_URL = 'mongodb+srv://interstellar-api:7NYYS4yVz0qpxl71@interstellarcluster.6k7fspb.mongodb.net/?retryWrites=true&w=majority'
+require('dotenv').config();
 
+const MONGO_URL = process.env.MONGO_URL;
 
 mongoose.connection.once('open', () => {
     console.log('mongodb connection ready')

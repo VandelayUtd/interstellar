@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 
-dotenv.config()
-
-// require('dotenv').config();
+require('dotenv').config();
 
 mongoose.set("strictQuery", false);
 
@@ -12,6 +9,7 @@ const MONGO_URL = process.env.MONGO_URL;
 
 mongoose.connection.once('open', () => {
     console.log('mongodb connection ready')
+    console.log(MONGO_URL)
 });
 
 mongoose.connection.on('error', (err) => {

@@ -8,7 +8,7 @@ jobs:
   build:
     env: 
       CI: true
-      MONGO_URL: mongoDB://localhost/interstellar-api
+      MONGO_URL: mongoDB://localhost/interstellar
     strategy: 
       matrix: 
         node-version: [14.x, 16.x]
